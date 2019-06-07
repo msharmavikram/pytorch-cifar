@@ -27,5 +27,7 @@ I manually change the `lr` during training:
 - `0.001` for epoch `[250,350)`
 
 ## How to use
-```pip install torchgpipe
-python main.py```
+```
+pip install torchgpipe
+python main.py
+```
