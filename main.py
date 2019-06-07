@@ -52,7 +52,7 @@ classes = ('plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship'
 print('==> Building model..')
 # net = VGG('VGG19')
 net = ResNet101()
-net = GPipe.GPipe(net, balance[1,303], chunks=8)
+net = GPipe.GPipe(net, balance=[1,303], chunks=8)
 print(net)
 
 # net = PreActResNet18()
