@@ -8,8 +8,8 @@ from typing import Any, List
 from torch import Tensor
 import torch.nn as nn
 
-from bottleneck import bottleneck
-from flatten import flatten
+from .bottleneck import bottleneck
+from .flatten import flatten
 
 __all__ = ['ResNet101']
 
