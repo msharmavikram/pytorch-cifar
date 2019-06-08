@@ -66,9 +66,15 @@ print(net)
 # net = SENet18()
 # net = ShuffleNetV2(1)
 #net = EfficientNetB0()
-net = net.to(device)
+
+#Heungsub: this is not required once GPipe is enabled. The data placement is handled by GPipe.
+#net = net.to(device)
+
 if device == 'cuda':
-    net = torch.nn.DataParallel(net)
+#Huengsub: nn.DataParallel() is not compatible with GPipe. 
+#Further, DataParallel is useless in GPipe after partition and assignment to different GPUs. 
+#One cannot exploit parallelism as GPUs are busy. 
+#    net = torch.nn.DataParallel(net)
     cudnn.benchmark = True
 
 if args.resume:
